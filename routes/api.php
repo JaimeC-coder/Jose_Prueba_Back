@@ -12,7 +12,7 @@ Route::get('/user', function (Request $request) {
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
-
+//Todo esta bien 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout']);
     Route::get('/welcome', [AuthController::class, 'welcome']);
@@ -26,6 +26,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/product/create', [ProductController::class, 'store']);
     Route::put('/product/update/{id}', [ProductController::class, 'update']);
     Route::delete('/product/delete/{id}', [ProductController::class, 'destroy']);
+    //Aqui deberia de ser con el metodo path 
     Route::post('/product/stock/{id}', [ProductController::class, 'addStock']);
     Route::post('/product/remove/{id}', [ProductController::class, 'removeStock']);
 
